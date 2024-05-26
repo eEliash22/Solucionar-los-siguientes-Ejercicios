@@ -1,0 +1,23 @@
+package Ejercicios.esgh.com;
+import java.util.Scanner;
+public class NumerosPrimos {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Ingrese un numero");
+		int numero = scanner.nextInt();
+		int primo = 0;
+		
+		for(int i = 1; i < numero + 1; i++) {
+			if(numero % i == 0) {
+				primo++;
+			}
+		}
+		if(primo != 2) {
+			System.out.println("No es Primo");
+		}else {
+			System.out.println("Es Primo");
+		}
+
+	}
+
+}
