@@ -9,7 +9,7 @@ public class SumaDeDosNumeros {
 		
 		System.out.println("Ingrese un valor");
 		valorUno = scanner.nextInt();
-		System.out.println("Ingrese el segundo valor");
+		System.out.println("Ingrese segundo valor");
 		valorDos = scanner.nextInt();
 		
 		resultado = valorUno + valorDos;
