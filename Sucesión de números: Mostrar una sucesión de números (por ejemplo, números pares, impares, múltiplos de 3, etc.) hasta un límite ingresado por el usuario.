@@ -1,0 +1,52 @@
+package Ejercicios.esgh.com;
+import java.util.Scanner;
+public class Sucesion {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingrese el limite superior:");
+        int limite = scanner.nextInt();
+
+        System.out.println("Seleccione el tipo de sucesion:");
+        System.out.println("1. Numeros pares");
+        System.out.println("2. Nmeros impares");
+        System.out.println("3. Multiplos de 3");
+        System.out.print("Opción: ");
+        int opcion = scanner.nextInt();
+
+        System.out.print("La sucesion es: ");
+        switch (opcion) {
+            case 1:
+                imprimirSucesionPares(limite);
+                break;
+            case 2:
+                imprimirSucesionImpares(limite);
+                break;
+            case 3:
+                imprimirSucesionMultiplos3(limite);
+                break;
+            default:
+                System.out.println("Opcion invalida.");
+                return;
+        }
+        System.out.println();
+    }
+
+    private static void imprimirSucesionPares(int limite) {
+        for (int i = 2; i <= limite; i += 2) {
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void imprimirSucesionImpares(int limite) {
+        for (int i = 1; i <= limite; i += 2) {
+            System.out.print(i + " ");
+        }
+    }
+
+    private static void imprimirSucesionMultiplos3(int limite) {
+        for (int i = 3; i <= limite; i += 3) {
+            System.out.print(i + " ");
+        }
+    }
+}
