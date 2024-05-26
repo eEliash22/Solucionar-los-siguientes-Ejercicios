@@ -1,0 +1,27 @@
+package Ejercicios.esgh.com;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class MayorYMenor {
+	public static void main(String[] args) {
+        ArrayList<Integer> lista = new ArrayList<>();
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Ingrese un valor");
+            lista.add(scanner.nextInt());
+        }
+        scanner.close();
+        int mayor = lista.get(0);
+        int menor = lista.get(0);
+        for (int i = 0; i < lista.size(); i++) {
+            int valor = lista.get(i);
+            if (valor > mayor) {
+                mayor = valor;
+            }
+            if (valor < menor) {
+                menor = valor;
+            }
+        }
+        System.out.println("El numero mayor: " + mayor);
+        System.out.println("El numero menor: " + menor);
+    }
+}
