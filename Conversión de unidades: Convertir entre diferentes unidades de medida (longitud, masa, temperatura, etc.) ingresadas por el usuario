@@ -1,0 +1,71 @@
+package Ejercicios.esgh.com;
+import java.util.Scanner;
+public class ConversionDeUnidades {
+	private static final String[][] UNIDADES = {
+	        {"metros", "pies", "pulgadas"},
+	        {"kilogramos", "libras", "onzas"},
+	        {"Celsius", "Fahrenheit", "Kelvin"}
+	    };
+	    private static final double[][] FACTORES = {
+	        {1.0, 0.3048, 0.0254},
+	        {1.0, 0.4536, 0.0283},
+	        {0.0, 1.8, 32.0}
+	    };
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        int opcion;
+
+	        do {
+	            System.out.println("Seleccione una opcion de conversion:");
+	            System.out.println("1. Longitud");
+	            System.out.println("2. Masa");
+	            System.out.println("3. Temperatura");
+	            System.out.println("4. Salir");
+	            opcion = scanner.nextInt();
+
+	            switch (opcion) {
+	                case 1:
+	                    convertir(scanner, 0);
+	                    break;
+	                case 2:
+	                    convertir(scanner, 1);
+	                    break;
+	                case 3:
+	                    convertir(scanner, 2);
+	                    break;
+	                case 4:
+	                    System.out.println("Saliendo...");
+	                    break;
+	                default:
+	                    System.out.println("Opción inválida. Intente de nuevo.");
+	                    break;
+	            }
+	        } while (opcion != 4);
+	    }
+
+	    private static void convertir(Scanner scanner, int tipo) {
+	        System.out.printf("Ingrese el valor a convertir (%s): ", UNIDADES[tipo][0]);
+	        double valor = scanner.nextDouble();
+
+	        System.out.println("Seleccione la unidad de origen:");
+	        for (int i = 0; i < UNIDADES[tipo].length; i++) {
+	            System.out.printf("%d. %s\n", i + 1, UNIDADES[tipo][i]);
+	        }
+	        int unidadOrigen = scanner.nextInt() - 1;
+
+	        System.out.println("Seleccione la unidad de destino:");
+	        for (int i = 0; i < UNIDADES[tipo].length; i++) {
+	            System.out.printf("%d. %s\n", i + 1, UNIDADES[tipo][i]);
+	        }
+	        int unidadDestino = scanner.nextInt() - 1;
+
+	        double resultado = convertir(valor, unidadOrigen, unidadDestino, FACTORES[tipo]);
+	        System.out.printf("%.2f %s = %.2f %s\n", valor, UNIDADES[tipo][unidadOrigen], resultado, UNIDADES[tipo][unidadDestino]);
+	    }
+
+	    private static double convertir(double valor, int unidadOrigen, int unidadDestino, double[] factores) {
+	        double valorEnUnidadBase = valor * factores[unidadOrigen];
+	        return valorEnUnidadBase / factores[unidadDestino];
+	    }
+	}
