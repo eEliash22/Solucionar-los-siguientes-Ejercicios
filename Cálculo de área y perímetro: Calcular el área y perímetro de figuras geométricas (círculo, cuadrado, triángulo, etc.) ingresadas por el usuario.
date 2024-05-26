@@ -1,1 +1,62 @@
+package Ejercicios.esgh.com;
+import java.util.Scanner;
+public class Calculo {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int opcion;
 
+        do {
+            System.out.println("Seleccione la figura:");
+            System.out.println("1. Circulo");
+            System.out.println("2. Cuadrado");
+            System.out.println("3. Triangulo");
+            System.out.println("4. Salir");
+            System.out.print("Ingrese su opcion: ");
+            opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    calcularCirculo(scanner);
+                    break;
+                case 2:
+                    calcularCuadrado(scanner);
+                    break;
+                case 3:
+                    calcularTriangulo(scanner);
+                    break;
+                case 4:
+                    System.out.println("Saliendo");
+                    break;
+                default:
+                    System.out.println("Opcion invalida. Intente de nuevo.");
+                    break;
+            }
+        } while (opcion != 4);
+    }
+
+    public static void calcularCirculo(Scanner scanner) {
+        System.out.print("Ingrese el radio del círculo: ");
+        double radio = scanner.nextDouble();
+        double area = Math.PI * radio * radio;
+        double perimetro = 2 * Math.PI * radio;
+        System.out.printf("Área del círculo: %.2f\nPerímetro del círculo: %.2f\n", area, perimetro);
+    }
+
+    public static void calcularCuadrado(Scanner scanner) {
+        System.out.print("Ingrese el lado del cuadrado: ");
+        double lado = scanner.nextDouble();
+        double area = lado * lado;
+        double perimetro = 4 * lado;
+        System.out.printf("Area del cuadrado: %.2f\nPerímetro del cuadrado: %.2f\n", area, perimetro);
+    }
+
+    public static void calcularTriangulo(Scanner scanner) {
+        System.out.print("Ingrese la base del triangulo: ");
+        double base = scanner.nextDouble();
+        System.out.print("Ingrese la altura del triangulo: ");
+        double altura = scanner.nextDouble();
+        double area = 0.5 * base * altura;
+        double perimetro = base + 2 * Math.sqrt(altura * altura + (base / 2) * (base / 2));
+        System.out.printf("Area del triangulo: %.2f\nPerímetro del triangulo: %.2f\n", area, perimetro);
+    }
+}
