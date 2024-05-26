@@ -1,0 +1,19 @@
+package Ejercicios.esgh.com;
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Promedio {
+	public static void main(String[] args) {
+		ArrayList lista = new ArrayList();
+		Scanner scanner = new Scanner(System.in);
+		double promedio = 0;
+		for(int i = 0; i < 5; i++) {
+			System.out.println("Ingrese un valor");
+			lista.add(scanner.nextInt());
+		}
+		for(int i = 0; i < lista.size(); i++) {
+			promedio += Double.parseDouble(lista.get(i).toString());
+		}
+		System.out.println("El promedio es: "+ promedio/lista.size());
+	}
+
+}
