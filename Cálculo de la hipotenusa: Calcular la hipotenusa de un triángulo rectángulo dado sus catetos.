@@ -1,0 +1,14 @@
+package Ejercicios.esgh.com;
+import java.util.Scanner;
+public class CalculoDeLaHipotenusa {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Primer cateto");
+        double catetoUno = scanner.nextDouble();
+        System.out.println("segundo cateto");
+        double catetoDos = scanner.nextDouble();
+        scanner.close();
+        double hipotenusa = Math.sqrt(Math.pow(catetoUno, 2) + Math.pow(catetoDos, 2));
+        System.out.println("La hipotenusa calculada es" + hipotenusa);
+    }
+}
