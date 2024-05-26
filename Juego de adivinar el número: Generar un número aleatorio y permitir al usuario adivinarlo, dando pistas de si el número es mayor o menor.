@@ -1,0 +1,28 @@
+package Ejercicios.esgh.com;
+import java.util.Random;
+import java.util.Scanner;
+public class JuegoDeAdivinar {
+	public static void main(String[] args) {
+		Random random = new Random();
+		int numeroRandom = random.nextInt(10);
+		int numero;
+		
+		System.out.println("Adivina eL numero");
+		System.out.println("Un numero entre 0 y 10: ");
+		for(int i = 0;; i++) {
+			Scanner scanner = new Scanner(System.in);
+			numero = scanner.nextInt();
+			
+			if(numeroRandom < numero) {
+				System.out.println("El numero es menor" + numero);
+				
+			}else if(numeroRandom > numero) {
+				System.out.println("El numero es mayor" + numero);
+			}else if(numeroRandom == numero) {
+				System.out.println("Numero correcto es " + numero);
+			}
+			
+		}
+	}
+
+}
